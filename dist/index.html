@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-nanga to-manga h-screen flex flex-col justify-center items-center">
+    
+    <div class=" h-3 w-48 bg-kolla rounded-t-xl border-t-4 border-black"></div>
+
+    <div class="flex items-center place-content-center p-8 pt-2 pb-2 bg-black rounded-full border-2 border-white">
+        
+    <div id="DigitalClock" class="text-black p-10  m-5 text-4xl  bg-thenga rounded-3xl border-teal-700 border-4 shadow-black shadow-md" >
+        
+    </div>
+    <p class="text-6xl text-bold text-white">:</p>
+    <div id="minut"
+        class="text-black p-10 m-5 text-4xl  bg-thenga rounded-3xl border-teal-700 border-4 shadow-black shadow-md">
+       
+    </div>
+     <p class="text-6xl text-bold text-white">:</p>
+    <div id="seconds"
+        class="text-black p-10 m-5 text-4xl  bg-thenga rounded-3xl border-teal-700 border-4 shadow-black shadow-md">
+
+    </div>
+     <div id="day"
+         class="text-white text-3xl  mt-10 rounded-3xl">
+
+     </div>
+     </div>
+
+      <div class="mt-6">
+          <h1 class="text-black text-xl">Time to check the time?</h1>
+      </div>
+     
+
+    
+    <script type="text/javascript">
+        function showtime(){ 
+        var date= new Date();
+        var h = date.getHours(); 
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        var session ="AM";
+
+        if(h==0){
+            h = 12;
+        }
+        if(h>12){
+            h=h-12;
+            session = "PM"
+        }
+        // if(h<10){
+        //     h="0"+h
+        // }
+        if(m<10){ m="0" +m }
+        if(s<10){ s="0" +s }
+
+            h=(h<10)?"0"+h:h;
+            
+
+
+        document.getElementById("DigitalClock").innerHTML = h + "ₕ";
+        document.getElementById("minut").innerHTML= m + "ₘ";
+        document.getElementById("seconds").innerHTML=s +"ₛ";
+        document.getElementById("day").innerHTML=session;
+
+        setTimeout(showtime,1000);
+
+    }
+    showtime();
+        </script>
+
+</body>
+</html>
+
+<!-- mistakes made
+1) -->
